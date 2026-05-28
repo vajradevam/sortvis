@@ -8,17 +8,12 @@ Interactive sorting algorithm visualizer built in C with SDL2 and SDL2_ttf. Feat
 - SDL2_ttf
 - A font (DejaVu Sans, Liberation Sans, or Helvetica)
 
-## Build
+## Clone, build, run
 
 ```sh
+git clone https://github.com/vajradevam/sortvis.git
+cd sortvis
 make
-```
-
-Run:
-
-```sh
-make run
-# or
 ./sortvis
 ```
 
