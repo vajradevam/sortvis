@@ -32,6 +32,7 @@ typedef struct {
     int current_idx;
     int current_idx2;
     int sorted_until;
+    int sorted_timer;
     bool quit;
 } SortState;
 

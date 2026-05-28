@@ -50,7 +50,7 @@ int main(int argc, char *argv[]) {
     }
 
     SDL_Renderer *renderer = SDL_CreateRenderer(
-        window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+        window, -1, SDL_RENDERER_ACCELERATED);
     if (!renderer) {
         fprintf(stderr, "Renderer creation failed: %s\n", SDL_GetError());
         SDL_DestroyWindow(window); TTF_Quit(); SDL_Quit();
@@ -107,7 +107,7 @@ int main(int argc, char *argv[]) {
             }
         }
 
-        SDL_SetRenderDrawColor(renderer, 0x1a, 0x1a, 0x2e, 255);
+        SDL_SetRenderDrawColor(renderer, 0x08, 0x08, 0x18, 255);
         SDL_RenderClear(renderer);
 
         int bars_y = ui_bar_height();

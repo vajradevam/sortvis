@@ -35,6 +35,7 @@ void init_state(SortState *s, int n) {
     s->current_idx = -1;
     s->current_idx2 = -1;
     s->sorted_until = 0;
+    s->sorted_timer = 0;
     s->quit = false;
     shuffle_array(s);
 }
@@ -56,6 +57,7 @@ void shuffle_array(SortState *s) {
     s->sorted = false;
     s->sorting = false;
     s->sorted_until = 0;
+    s->sorted_timer = 0;
     s->comparisons = 0;
     s->swaps = 0;
     s->current_idx = -1;
@@ -398,6 +400,7 @@ void run_sort(SortState *s) {
 
     s->sorting = false;
     s->sorted = true;
+    s->sorted_timer = 60;
     s->current_idx = -1;
     s->current_idx2 = -1;
     s->sorted_until = s->n;
