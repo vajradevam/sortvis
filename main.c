@@ -92,8 +92,15 @@ int main(int argc, char *argv[]) {
                         running = false;
                 }
             }
-            if (e.type == SDL_MOUSEBUTTONDOWN && e.button.button == SDL_BUTTON_LEFT) {
-                handle_ui_click(&state, e.button.x, e.button.y);
+            if (e.type == SDL_MOUSEBUTTONDOWN && e.button.button == SDL_BUTTON_LEFT
+                && !state.sorting)
+            {
+                if (handle_ui_click(&state, e.button.x, e.button.y))
+                    run_sort(&state);
+                // If the window was closed during sorting, exit main loop
+                if (app_should_quit())
+                    running = false;
+                clear_quit_flag();
             }
             if (e.type == SDL_MOUSEMOTION) {
                 track_mouse(e.motion.x, e.motion.y);
@@ -110,7 +117,7 @@ int main(int argc, char *argv[]) {
 
         SDL_RenderPresent(renderer);
 
-        if (!state.sorting)
+        if (!state.sorting && !app_should_quit())
             SDL_Delay(16);
     }
 
