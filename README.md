@@ -4,9 +4,18 @@ Interactive sorting algorithm visualizer built in C with SDL2 and SDL2_ttf. Feat
 
 ## Requirements
 
-- SDL2
-- SDL2_ttf
-- A font (DejaVu Sans, Liberation Sans, or Helvetica)
+- SDL2, SDL2_ttf, and a font (DejaVu Sans / Liberation Sans)
+
+```sh
+# Ubuntu / Debian
+sudo apt install libsdl2-dev libsdl2-ttf-dev fonts-dejavu
+
+# Arch Linux
+sudo pacman -S sdl2 sdl2_ttf ttf-dejavu
+
+# Fedora
+sudo dnf install SDL2-devel SDL2_ttf-devel dejavu-sans-fonts
+```
 
 ## Clone, build, run
 
